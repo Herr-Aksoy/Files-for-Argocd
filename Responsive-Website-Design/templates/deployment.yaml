@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: responsive-website-design
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: responsive-website-design
+  template:
+    metadata:
+      labels:
+        app: responsive-website-design
+    spec:
+      containers:
+        - name: responsive-website-design
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

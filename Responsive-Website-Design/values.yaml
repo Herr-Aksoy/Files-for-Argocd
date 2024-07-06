@@ -1,0 +1,6 @@
+replicaCount: 1
+
+image:
+  repository: herraksoy/projects
+  tag: Responsive-Website-Design
+  pullPolicy: IfNotPresent
